@@ -2,25 +2,25 @@ public class Square{
 	private final int row;
 	private final char col;
 	private final Color color;
-	private boolean occupied;
+	private Peice peice;
 
-	public Square(int row, char col, Color color, boolean occupied){
+	public Square(int row, char col, Color color, Peice peice){
 		this.row = row;
 		this.col = col;
 		this.color = color;
-		this.occupied = occupied;
+		this.peice = peice;
 	}
 
 	public Square(int row, char col, Color color){
-		this(row, col, color, false);
+		this(row, col, color, null);
 	}
 
 	public boolean isOccupied(){
-		return this.occupied;
+		return this.peice == null;
 	}
 
-	public void setOccupied(boolean occupied){
-		this.occupied = occupied;
+	public void setPeice(Peice peice){
+		this.peice = peice;
 	}
 
 	public Color getColor(){
