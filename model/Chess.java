@@ -9,9 +9,9 @@ public class Chess{
 	private Board board;
 
 	public Chess(){
-		whitePlayer = new Player(Color.WHITE);
-		blackPlayer = new Player(Color.BLACK);
 		board = new Board();
+		whitePlayer = new Player(Color.WHITE, board);
+		blackPlayer = new Player(Color.BLACK, board);
 		state = State.RUNNING;
 		currentPlayer = whitePlayer;
 	}
@@ -28,9 +28,11 @@ public class Chess{
 		Chess chess = new Chess();
 
 		while(chess.state != State.END){
-			chess.currentPlayer.makeMove();
-			chess.togglePlayer();
-			chess.state = chess.refreshState();
+			chess.board.printBoard();
+			if(chess.currentPlayer.makeMove()){
+				chess.togglePlayer();
+				chess.state = chess.refreshState();
+			}
 		}
 
 	}

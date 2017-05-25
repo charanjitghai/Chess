@@ -1,11 +1,13 @@
 import java.util.ArrayList;
-public abstract class Peice{
+public class Peice{
+	private String id;
 	private String name;
 	private Color color;
 	private Square location;
 	private ArrayList<Move> allowedMoves;
 	private boolean alive;
-	public Peice(String name, Color color, Square location, ArrayList<Move> allowedMoves){
+	public Peice(String id, String name, Color color, Square location, ArrayList<Move> allowedMoves){
+		this.id = id;
 		this.name = name;
 		this.color = color;
 		this.location = location;
@@ -29,9 +31,22 @@ public abstract class Peice{
 
 	public boolean move(Square destination){
 		if(isValidMove(destination)){
+			Peice destinationPeice = destination.getPeice();
+			if(destinationPeice != null)
+				destinationPeice.kill();
+			this.location.setPeice(null);
 			this.location = destination;
+			this.location.setPeice(this);
 			return true;
 		}
 		return false;
+	}
+
+	public String getName(){
+		return this.name;
+	}
+
+	public Color getColor(){
+		return color;
 	}
 }

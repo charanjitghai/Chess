@@ -23,7 +23,19 @@ public class Square{
 		this.peice = peice;
 	}
 
+	public Peice getPeice(){
+		return peice;
+	}
+
 	public Color getColor(){
 		return this.color;
+	}
+
+	public int getRow(){
+		return row;
+	}
+
+	public char getCol(){
+		return col;
 	}
 }
