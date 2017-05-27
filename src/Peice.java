@@ -1,16 +1,20 @@
 import java.util.ArrayList;
 public class Peice{
+
 	private String id;
 	private String name;
 	private Color color;
 	private Square location;
+	private Board board;
 	private ArrayList<Move> allowedMoves;
 	private boolean alive;
-	public Peice(String id, String name, Color color, Square location, ArrayList<Move> allowedMoves){
+
+	public Peice(String id, String name, Color color, Square location, Board board, ArrayList<Move> allowedMoves){
 		this.id = id;
 		this.name = name;
 		this.color = color;
 		this.location = location;
+		this.board = board;
 		this.allowedMoves = allowedMoves;
 		this.alive = true;
 	}
@@ -22,7 +26,7 @@ public class Peice{
 
 	public boolean isValidMove(Square destination){
 		for(Move move: allowedMoves){
-			if(move.isValidMove(this.location, destination)){
+			if(move.isValidMove(this.location, destination, board)){
 				return true;
 			}
 		}

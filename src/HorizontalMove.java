@@ -7,21 +7,36 @@ public class HorizontalMove implements Move{
 	
 	public static HorizontalMove getInstance(){
 		if(instance == null)
-			instance = new HorizontalMove;
+			instance = new HorizontalMove();
 		return instance;
 	}
 	
-	public boolean isValidMove(Square source, Square destination){
+	public boolean isValidMove(Square source, Square destination, Board board){
 		
 		int sourceRow = source.getRow();
-		int sourceCol = (int) source.getCol() - (int)'A';
+		char sourceCol = source.getCol();
 
 		int destRow = destination.getRow();
-		int destCol = destination.getCol() - (int)'A';
+		char destCol = destination.getCol();
 
-		if(destRow != sourceRow)
+		if(sourceRow != destRow)
 			return false;
-		
+
+		int step;
+		if(sourceCol < destCol)
+			step = 1;
+		else if(sourceCol > destCol)
+			step = -1;
+		else
+			return false;
+
+		for(char col = (char) (sourceCol + step); col != destCol; col += step){
+			Square square = board.getSquare(col, sourceRow);
+			if(square.getPeice() != null)
+				return false;
+		}
+
+
 		return true;
 	
 	}

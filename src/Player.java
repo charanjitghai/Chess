@@ -15,11 +15,11 @@ public class Player{
 		Square location;
 		if(color == Color.BLACK){
 			location = board.getSquare(Constants.BLACK_KING_INIT_LOC);
-			King = new Peice(Constants.BLACK_KING_ID, Constants.BLACK_KING_NAME, color, location, allowedMoves);
+			King = new Peice(Constants.BLACK_KING_ID, Constants.BLACK_KING_NAME, color, location, board, allowedMoves);
 		}
 		else{
 			location = board.getSquare(Constants.WHITE_KING_INIT_LOC);
-			King = new Peice(Constants.WHITE_KING_ID, Constants.WHITE_KING_NAME, color, location, allowedMoves);	
+			King = new Peice(Constants.WHITE_KING_ID, Constants.WHITE_KING_NAME, color, location, board, allowedMoves);
 		}
 
 
@@ -35,6 +35,8 @@ public class Player{
 	}
 
 	public boolean makeMove(){
+
+
 		Scanner s = new Scanner(System.in);
 
 		int source_row = s.nextInt();
