@@ -92,9 +92,9 @@ public class Player{
 		Square destination = board.getSquare(dest_col.charAt(0), dest_row);
 
 
-		if(source == null){
-			System.out.println("Bug");
-		}
+		if(source == null || source.getPeice() == null || (source.getPeice().getColor() != this.color))
+			return false;
+
 		Peice sourcePeice = source.getPeice();
 		assert(sourcePeice != null);
 		assert(sourcePeice.getColor() == this.color);
