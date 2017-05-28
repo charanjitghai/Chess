@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class Player{
 	private Color color;
 	private Board board;
-	Peice King;
+	private Peice King;
+	private ArrayList<Peice> Rooks;
 
 	private void initKing(){
 		
@@ -27,10 +28,50 @@ public class Player{
 		location.setPeice(King);
 	}
 
+
+	private void initRooks(){
+
+		VerticalMove vMove = VerticalMove.getInstance();
+		HorizontalMove hMove = HorizontalMove.getInstance();
+		ArrayList<Move> allowedMovesRook1 = new ArrayList<Move>();
+		ArrayList<Move> allowedMovesRook2 = new ArrayList<Move>();
+		allowedMovesRook1.add(vMove);
+		allowedMovesRook1.add(hMove);
+		allowedMovesRook2.add(vMove);
+		allowedMovesRook2.add(hMove);
+		Peice Rook1, Rook2;
+
+		if(color == Color.BLACK){
+			Square location1 = board.getSquare(Constants.BLACK_ROOK1_INIT_LOC);
+			Rook1 = new Peice(Constants.BLACK_ROOK1_ID, Constants.BLACK_ROOK1_NAME,
+					color, location1, board, allowedMovesRook1);
+			location1.setPeice(Rook1);
+			Square location2 = board.getSquare(Constants.BLACK_ROOK2_INIT_LOC);
+			Rook2 = new Peice(Constants.BLACK_ROOK2_ID, Constants.BLACK_ROOK2_NAME,
+					color, location2, board, allowedMovesRook2);
+			location2.setPeice(Rook2);
+		}
+		else{
+			Square location1 = board.getSquare(Constants.WHITE_ROOK1_INIT_LOC);
+			Rook1 = new Peice(Constants.WHITE_ROOK1_ID, Constants.WHITE_ROOK1_NAME,
+					color, location1, board, allowedMovesRook1);
+			location1.setPeice(Rook1);
+			Square location2 = board.getSquare(Constants.WHITE_ROOK2_INIT_LOC);
+			Rook2 = new Peice(Constants.WHITE_ROOK2_ID, Constants.WHITE_ROOK2_NAME,
+					color, location2, board, allowedMovesRook2);
+			location2.setPeice(Rook2);
+
+		}
+		Rooks = new ArrayList<Peice>();
+		Rooks.add(Rook1);
+		Rooks.add(Rook2);
+	}
+
 	public Player(Color color, Board board){
 		this.color = color;
 		this.board = board;
 		initKing();
+		initRooks();
 
 	}
 
