@@ -27,5 +27,22 @@ public class Constants{
 	public static final String WHITE_ROOK2_INIT_LOC = "H1";
 
 
+	public static final String BLACK_BISHOP1_ID = "BB1";
+	public static final String BLACK_BISHOP1_NAME = "BB";
+	public static final String BLACK_BISHOP1_INIT_LOC = "C8";
+
+	public static final String BLACK_BISHOP2_ID = "BB2";
+	public static final String BLACK_BISHOP2_NAME = "BB";
+	public static final String BLACK_BIHOP2_INIT_LOC = "F8";
+
+
+	public static final String WHITE_BISHOP1_ID = "WB1";
+	public static final String WHITE_BISHOP1_NAME = "WB";
+	public static final String WHITE_BISHOP1_INIT_LOC = "C1";
+
+	public static final String WHITE_BISHOP2_ID = "WB2";
+	public static final String WHITE_BISHOP2_NAME = "WB";
+	public static final String WHITE_BISHOP2_INIT_LOC = "F1";
+
 
 }
