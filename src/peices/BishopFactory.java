@@ -2,7 +2,6 @@ package peices;
 
 import main.Board;
 import main.Color;
-import main.Constants;
 import main.Square;
 import moves.DiagonalMove;
 import moves.Move;

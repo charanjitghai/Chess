@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 import main.Board;
 import main.Color;
-import main.Constants;
 import main.Square;
 import moves.Move;
 import moves.HorizontalMove;

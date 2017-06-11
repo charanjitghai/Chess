@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import main.Board;
 import main.Color;
-import main.Constants;
 import main.Square;
 
 import moves.HorizontalMove;
