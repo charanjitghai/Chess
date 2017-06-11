@@ -1,6 +1,11 @@
 /**
  * Created by cghai on 5/26/17.
  */
+
+package moves;
+import main.Square;
+import main.Board;
+
 public class VerticalMove implements Move{
 
     private static VerticalMove instance = null;

@@ -1,3 +1,7 @@
+package moves;
+import main.Square;
+import main.Board;
+
 public class HorizontalMove implements Move{
 	
 	private static HorizontalMove instance = null;

@@ -1,3 +1,6 @@
+package main;
+import peices.Peice;
+
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -9,6 +12,9 @@ public class Board{
 	private Map<String,Square> positionToSquare;
 	public static final char [] cols = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
 	public static final int [] rows = {1, 2, 3, 4, 5, 6, 7, 8};
+
+	private PeiceSet whitePeiceSet;
+	private PeiceSet blackPeiceSet;
 
 	public Board(){
 
@@ -39,6 +45,13 @@ public class Board{
 				
 			}
 		}
+
+		initPeiceSets();
+	}
+
+	private void initPeiceSets(){
+		whitePeiceSet = new PeiceSet(this, Color.WHITE);
+		blackPeiceSet = new PeiceSet(this, Color.BLACK);
 	}
 
 	public Square getSquare(String position){

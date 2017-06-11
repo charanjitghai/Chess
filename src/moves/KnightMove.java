@@ -1,6 +1,11 @@
 /**
  * Created by cghai on 5/29/17.
  */
+
+package moves;
+import main.Square;
+import main.Board;
+
 public class KnightMove implements Move {
     private static KnightMove instance = null;
     private KnightMove(){

@@ -26,6 +26,10 @@ public class Peice{
 		this.alive = true;
 	}
 
+	protected void addMove(Move move){
+	    this.allowedMoves.add(move);
+    }
+
 	public void kill(){
 		this.alive = false;
 		this.location.setPeice(null);

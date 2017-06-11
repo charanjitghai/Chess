@@ -1,3 +1,5 @@
+package main;
+
 public class Constants{
 	
 	public static final String BLACK_KING_ID = "BK";

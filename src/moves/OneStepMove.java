@@ -1,3 +1,8 @@
+package moves;
+import main.Board;
+import main.Square;
+import peices.Peice;
+
 public class OneStepMove implements Move{
 	
 	private static OneStepMove instance = null;

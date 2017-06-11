@@ -2,6 +2,10 @@
  * Created by cghai on 5/28/17.
  */
 
+package moves;
+import main.Square;
+import main.Board;
+
 public class DiagonalMove implements Move {
 
     private static DiagonalMove instance = null;

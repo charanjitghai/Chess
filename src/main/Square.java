@@ -1,3 +1,7 @@
+package main;
+
+import peices.Peice;
+
 public class Square{
 	private final int row;
 	private final char col;
