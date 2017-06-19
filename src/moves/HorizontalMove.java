@@ -15,7 +15,7 @@ public class HorizontalMove implements Move{
 		return instance;
 	}
 	
-	public boolean isValidMove(Square source, Square destination, Board board){
+	public boolean isValidMove(final Square source, final Square destination, final Board board){
 		
 		int sourceRow = source.getRow();
 		char sourceCol = source.getCol();

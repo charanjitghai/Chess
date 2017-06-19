@@ -35,7 +35,7 @@ public class Peice{
 		this.location.setPeice(null);
 	}
 
-	public boolean isValidMove(Square destination){
+	public boolean isValidMove(final Square destination){
 		for(Move move: allowedMoves){
 			if(move.isValidMove(this.location, destination, board)){
 				return true;

@@ -13,6 +13,7 @@ public class PeiceSet {
     private ArrayList<Peice> bishops;
     private ArrayList<Peice> knights;
     private ArrayList<Peice> rooks;
+    private ArrayList<Peice> pawns;
     private Board board;
     private Color color;
     private ArrayList<Peice> allPeices;
@@ -23,6 +24,7 @@ public class PeiceSet {
         bishops = BishopFactory.getBishops(board, color);
         knights = KnightFactory.getKnights(board, color);
         rooks = RookFactory.getRooks(board, color);
+        pawns = PawnFactory.getPawns(board, color);
         this.board = board;
         this.color = color;
 

@@ -17,7 +17,7 @@ public class OneStepMove implements Move{
 	}
 
 
-	public boolean isValidMove(Square source, Square destination, Board board){
+	public boolean isValidMove(final Square source, final Square destination, final Board board){
 		int sourceRow = source.getRow() -1;
 		int sourceCol = (int)source.getCol() - (int)'A';
 
