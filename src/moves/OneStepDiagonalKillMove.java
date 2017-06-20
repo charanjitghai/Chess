@@ -28,6 +28,10 @@ public class OneStepDiagonalKillMove implements Move {
         }
         if(abs(destination.getCol() - source.getCol()) != 1)
             return false;
+
+        if(destination.getPeice() == null)
+            return false;
+
         if(destination.getPeice().getColor() == source.getPeice().getColor())
             return false;
 

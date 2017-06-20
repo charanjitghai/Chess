@@ -16,4 +16,5 @@ public enum Color{
 		else
 			return "BLACK";
 	}
+
 }

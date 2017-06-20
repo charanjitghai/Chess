@@ -13,8 +13,8 @@ public class Board{
 	public static final char [] cols = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
 	public static final int [] rows = {1, 2, 3, 4, 5, 6, 7, 8};
 
-	private PeiceSet whitePeiceSet;
-	private PeiceSet blackPeiceSet;
+
+	private Map<Color, PeiceSet> peiceSetMap;
 
 	public Board(){
 
@@ -50,9 +50,15 @@ public class Board{
 	}
 
 	private void initPeiceSets(){
-		whitePeiceSet = new PeiceSet(this, Color.WHITE);
-		blackPeiceSet = new PeiceSet(this, Color.BLACK);
+	    peiceSetMap = new HashMap<Color, PeiceSet>();
+		peiceSetMap.put(Color.WHITE, new PeiceSet(this, Color.WHITE));
+		peiceSetMap.put(Color.BLACK, new PeiceSet(this, Color.BLACK));
 	}
+
+	public PeiceSet getPeiceSet(Color color){
+        return peiceSetMap.get(color);
+    }
+
 
 	public Square getSquare(String position){
 		return positionToSquare.get(position);
